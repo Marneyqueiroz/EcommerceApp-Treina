@@ -4,23 +4,23 @@ import { TouchableOpacity } from "react-native";
 import imagem from "../../../assets/tela_principal.png";
 
 export default function TelaPrincipal() {
-    return <>
-        <View>
-            <Image source={imagem} style={estilos.imagem}></Image>
-            <Text style={estilos.titulo}>Todas as suas compras num só app!</Text>
-            <Text style={estilos.subtitulo}>Venda seus produtos da maneira mais inteligente e rápida para obter dinheiro imediato e uma consciência mais limpa.</Text>
 
-            <View style = {estilos.botoes}>
-                <TouchableOpacity style = {estilos.botaoLogin}>
-                    <Text style = {estilos.textoBotaoLogin}>Log In</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={estilos.botaoSingUp}>
-                    <Text style = {estilos.textoBotaoSingUp}>Sing Up</Text>
-                </TouchableOpacity>
-            </View>
+    return (<View>
+        <Image source={imagem} style={estilos.imagem}></Image>
+        <Text style={estilos.titulo}>Todas as suas compras num só app!</Text>
+        <Text style={estilos.subtitulo}>Venda seus produtos da maneira mais inteligente e rápida para obter dinheiro imediato e uma consciência mais limpa.</Text>
+
+        <View style={estilos.botoes}>
+            <TouchableOpacity style={estilos.botaoLogin} >
+                <Text style={estilos.textoBotaoLogin}>Log In</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={estilos.botaoSingUp}>
+                <Text style={estilos.textoBotaoSingUp}>Sign Up</Text>
+            </TouchableOpacity>
         </View>
+    </View>
 
-    </>
+    )
 }
 
 
@@ -43,10 +43,10 @@ const estilos = StyleSheet.create({
     },
     botoes: {
         marginTop: 25,
-        flexDirection:"row",
+        flexDirection: "row",
         justifyContent: 'space-between'
     },
-    botaoLogin:{
+    botaoLogin: {
         backgroundColor: "#FF7A00",
         padding: 10,
         borderRadius: 5,
@@ -55,12 +55,12 @@ const estilos = StyleSheet.create({
         width: 170,
         marginStart: 25
     },
-    textoBotaoLogin:{
+    textoBotaoLogin: {
         textAlign: "center",
-        color:"#FFFFFF",
-        fontWeight:"bold"
+        color: "#FFFFFF",
+        fontWeight: "bold"
     },
-    botaoSingUp:{
+    botaoSingUp: {
         backgroundColor: "#FF7A00",
         padding: 10,
         borderRadius: 5,
@@ -69,10 +69,10 @@ const estilos = StyleSheet.create({
         width: 170,
         marginEnd: 25
     },
-    textoBotaoSingUp:{
+    textoBotaoSingUp: {
         textAlign: "center",
-        color:"#FFFFFF",
-        fontWeight:"bold"
+        color: "#FFFFFF",
+        fontWeight: "bold"
     }
 
 })
