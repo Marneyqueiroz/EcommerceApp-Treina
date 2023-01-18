@@ -1,0 +1,85 @@
+import React from "react";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+
+
+const ShopCard = ({ imagem, produto }) => {
+    return (
+        <View style={estilos.container} >
+            <Image source={imagem} style={estilos.imagem} />
+
+            <View style={estilos.conteudo}>
+                <Text>Camisa Longa Branca</Text>
+                <View style={estilos.informacoes}>
+                    <Text style={estilos.preco}>R$ 100,00</Text>
+                    <TouchableOpacity onPress={() => aoClicarNoProduto()}>
+                        <Ionicons name="arrow-forward-outline" size={20} color="#000000"></Ionicons>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </View>
+    )
+}
+
+const estilos = StyleSheet.create({
+    container: {
+        marginTop: 20,
+        marginBottom: 20,
+        backgroundColor: "#FFFFFF",
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
+    },
+    reviews: {
+        flexDirection: "row",
+        position: "absolute",
+        top: 15,
+        marginStart: 10,
+        flexDirection: "row",
+        alignSelf: "flex-start",
+        backgroundColor: "white",
+        padding: 5,
+        borderRadius: 5
+    },
+    textoReview: {
+        fontSize: 14,
+        fontWeight: "bold",
+        marginStart: 5
+    },
+    favoritos: {
+        flexDirection: "row",
+        position: "absolute",
+        top: 15,
+        marginStart: 130,
+        flexDirection: "row",
+        alignSelf: "flex-start",
+        backgroundColor: "white",
+        padding: 5,
+        borderRadius: 5
+    },
+    conteudo: {
+        padding: 15,
+    },
+    informacoes: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: 5
+    },
+    imagem: {
+        width: 170,
+        height: 170
+    },
+    preco: {
+        fontSize: 18,
+        fontWeight: "bold"
+    }
+})
+
+export default ShopCard;
