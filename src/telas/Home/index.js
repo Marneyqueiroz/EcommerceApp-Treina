@@ -1,63 +1,24 @@
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import oferta1 from "../../../assets/oferta_1.png";
-import usuarioIcne from "../../../assets/usuario_icone.png";
-import HorizontalCards from "./componentes/HorizontalCards";
-import {anuncios} from "../../mocks/anuncios"
+
+import Anuncios from "./componentes/Anuncios";
+import Header from "./componentes/Header";
+import Ofertas from "./componentes/Ofertas";
+import PromoCard from "./componentes/PromoCard";
 
 
 export default function Home() {
 
     return (
         <View style={estilos.tela}>
-            <View style={estilos.cabecalho}>
-                <View >
-                    <Text>Bem-Vindo,    </Text>
-                    <Text style={estilos.titulo}>Usuário</Text>
-                </View>
-                <View>
-                    <Image source={usuarioIcne} style={estilos.imagem}></Image>
-                </View>
-            </View>
-
-            <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}>
-                {
-                    anuncios?.map((anuncio, indice)=>{
-
-                        return (
-                            <HorizontalCards 
-                            titulo={anuncio.titulo} 
-                            descricao={anuncio.descricao} 
-                            textoBotao={anuncio.textoBotao}
-                            key={indice}/>
-                        )
-
-                    })
-                }
-                
-            </ScrollView>
-
+            <Header />
+            <Anuncios />
             <View style={estilos.cabecalho}>
                 <Text style={estilos.titulo}>Ofertas Incríveis</Text>
                 <Text style={estilos.linkVerTudo}>Ver Tudo</Text>
             </View>
-
-            <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}>
-            <TouchableOpacity >
-                <Image source={oferta1} style={estilos.imagemOferta}></Image>
-                <Text>Liquidação</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity >
-                <Image source={oferta1} style={estilos.imagemOferta}></Image>
-                <Text>Liquidação</Text>
-            </TouchableOpacity>
-            </ScrollView>
-
+            <Ofertas />
+            <PromoCard/>
         </View>
     )
 }
@@ -133,12 +94,7 @@ const estilos = StyleSheet.create({
         height: 150,
         marginBottom: 15
     },
-    imagemOferta: {
-        marginTop: 20,
-        width: 150,
-        height: 150,
-        marginBottom: 15
-    }
+
 
 
 })

@@ -55,7 +55,8 @@ const Loja = () => {
 
 const estilos = StyleSheet.create({
     tela: {
-        margin: 25
+        margin: 25,
+        marginTop:0
     },
     imagem: {
         width: 50,
