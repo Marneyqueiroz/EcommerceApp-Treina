@@ -14,8 +14,8 @@ const SectionHeader = ({ titulo, link }) => {
 
 const estilos = StyleSheet.create({
     container: {
-        flexdirection: "row",
-        justifyContent: "space-between"
+        flexDirection:"row",
+        justifyContent: "space-between",       
     },
     titulo: {
         marginTop: 5,

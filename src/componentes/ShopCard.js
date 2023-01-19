@@ -5,11 +5,22 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 const ShopCard = ({ imagem, produto }) => {
     return (
-        <View style={estilos.container} >
+        <View style={estilos.container} onPress={() => { }} >
             <Image source={imagem} style={estilos.imagem} />
 
-            <View style={estilos.conteudo}>
-                <Text>Camisa Longa Branca</Text>
+            <View style={estilos.reviews}>
+                <Ionicons name="star-outline" size={15} color="#FDCC0D"></Ionicons>
+                <Text style={estilos.textoReview}>4.9</Text>
+            </View>
+
+            <View style={estilos.favoritos}>
+                <TouchableOpacity onPress={() => { }}>
+                    <Ionicons name="heart-outline" size={18} color="#000000"></Ionicons>
+                </TouchableOpacity>
+            </View>
+
+            <View style={estilos.conteudo} onPress={() => { }}>
+                <Text>{produto}</Text>
                 <View style={estilos.informacoes}>
                     <Text style={estilos.preco}>R$ 100,00</Text>
                     <TouchableOpacity onPress={() => aoClicarNoProduto()}>
@@ -41,7 +52,6 @@ const estilos = StyleSheet.create({
         position: "absolute",
         top: 15,
         marginStart: 10,
-        flexDirection: "row",
         alignSelf: "flex-start",
         backgroundColor: "white",
         padding: 5,
