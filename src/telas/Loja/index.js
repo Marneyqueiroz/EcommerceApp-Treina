@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 import imgCard1 from "../../../assets/cartao_compras_icon_1.png";
 import imgCard2 from "../../../assets/cartao_compras_icon_2.png";
 import imgCard3 from "../../../assets/cartao_compras_icon_3.png";
@@ -9,7 +9,6 @@ import SectionHeader from "../../componentes/SectionHeader";
 import ShopCard from "../../componentes/ShopCard";
 import { produtos } from "../../mocks/produtos";
 import Header from "./componentes/Header";
-import usuarioIcne from "../../../assets/usuario_icone.png";
 
 
 const Loja = () => {
