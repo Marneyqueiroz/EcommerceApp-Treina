@@ -1,44 +1,47 @@
 import React from "react";
-import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, Text, View, StatusBar } from "react-native";
+import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import Octicons from "react-native-vector-icons/Octicons";
-import modelo1 from "../../../../assets/modelo_1.png";
-import modelo2 from "../../../../assets/modelo_2.png";
-import modelo3 from "../../../../assets/modelo_3.png";
-import modelo4 from "../../../../assets/modelo_4.png";
 
 
-const imagens = [modelo1, modelo2, modelo3, modelo4];
+const Carrossel = ({ imagens, imagemAtiva, setImagemAtiva }) => {
 
-const Carrossel = () => {
+    const handleOnChange = (nativeEvent) => {
+        if (nativeEvent) {
+            const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement .width);
+            if (slide != imagemAtiva) {
+                setImagemAtiva(slide);
+            }
+        }
+    }
     return (
-            <View style={estilos.container}>
-                <ScrollView
-                    horizontal
-                    style={estilos.container}
-                    showsHorizontalScrollIndicator={false}
-                    pagingEnabled
-                    onScroll={() => { }}
-                >{
-                        imagens?.map((imagem, index) => {
-                            return (
-                                <Image source={imagem} key={index} style={estilos.container} />
-                            )
-                        })
-                    }
-                </ScrollView>
-                <View style={estilos.indicadores}>{
-                    imagens.map((_, index) => {
+        <View style={estilos.container}>
+            <ScrollView
+                horizontal
+                style={estilos.container}
+                showsHorizontalScrollIndicator={false}
+                pagingEnabled
+                onScroll={({ nativeEvent }) => { handleOnChange(nativeEvent) }}
+            >{
+                    imagens?.map((imagem, index) => {
                         return (
-                            <Text key={index}
-                                style={index === 2 ? [estilos.indicador, estilos.indicadorAtivo] : estilos.indicador}
-                            >
-                                <Octicons name="dot-fill" size={25} />
-                            </Text>
+                            <Image source={imagem} key={index} style={estilos.container} />
                         )
                     })
                 }
-                </View>
+            </ScrollView>
+            <View style={estilos.indicadores}>{
+                imagens.map((_, index) => {
+                    return (
+                        <Text key={index}
+                            style={index === imagemAtiva ? [estilos.indicador, estilos.indicadorAtivo] : estilos.indicador}
+                        >
+                            <Octicons name="dot-fill" size={25} />
+                        </Text>
+                    )
+                })
+            }
             </View>
+        </View>
     )
 }
 
@@ -64,6 +67,6 @@ const estilos = StyleSheet.create({
     indicadorAtivo: {
         color: "#FFA959"
     },
-    
+
 
 })
