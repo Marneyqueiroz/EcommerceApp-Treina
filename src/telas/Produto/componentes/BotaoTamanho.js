@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const BotaoTamanho = ({tamanho}) => {
+const BotaoTamanho = ({label, tamanho, setTamanho}) => {
     return (
-        <TouchableOpacity style={(tamanho==="M" ? [estilos.botaoSelecionado, estilos.botao]: estilos.botao)} onPress = {() => {}}>
-            <Text style={{fontSize: 16}}>{tamanho}</Text>
+        <TouchableOpacity style={(label===tamanho ? [estilos.botaoSelecionado, estilos.botao]: estilos.botao)} 
+        onPress = {() => {setTamanho(label)}}>
+            <Text style={{fontSize: 16}}>{label}</Text>
         </TouchableOpacity>
     )
 }

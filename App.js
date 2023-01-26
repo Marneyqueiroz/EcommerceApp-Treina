@@ -1,13 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
-import CarrinhoDeCompras from './src/telas/CarrinhoDeCompras';
-import Home from './src/telas/Home/';
+import Produto from './src/telas/Produto';
 
 export default function App() {
   return (
 
     <View>
-      <CarrinhoDeCompras />
+      <Produto />
     </View>
   );
 }

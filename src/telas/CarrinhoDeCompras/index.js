@@ -38,7 +38,9 @@ const CarrinhoDeCompras = () => {
 
 const estilos = StyleSheet.create({
     tela:{
-        margin:25
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: 35
     }
 })
 export default CarrinhoDeCompras;
