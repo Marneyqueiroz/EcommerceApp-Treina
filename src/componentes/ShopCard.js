@@ -1,9 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 
 const ShopCard = ({ imagem, produto }) => {
+    const navigation = useNavigation();
     return (
         <View style={estilos.container} onPress={() => { }} >
             <Image source={imagem} style={estilos.imagem} />
@@ -23,7 +25,7 @@ const ShopCard = ({ imagem, produto }) => {
                 <Text>{produto}</Text>
                 <View style={estilos.informacoes}>
                     <Text style={estilos.preco}>R$ 100,00</Text>
-                    <TouchableOpacity onPress={() => aoClicarNoProduto()}>
+                    <TouchableOpacity onPress={() => {navigation.navigate('Produto')}}>
                         <Ionicons name="arrow-forward-outline" size={20} color="#000000"></Ionicons>
                     </TouchableOpacity>
                 </View>

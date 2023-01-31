@@ -13,7 +13,7 @@ const imagens = [modelo1, modelo2, modelo3, modelo4];
 
 
 
-const Produto = () => {
+const Produto = ({navigation}) => {
     const [tamanho, setTamanho] = useState("");
     const [numItens, setNumItens] = useState(1);
     const [imagemAtiva, setImagemAtiva] = useState(0);
@@ -80,7 +80,7 @@ const Produto = () => {
                         </View>
                     </View>
                     <TouchableOpacity
-                        onPress={() => { }}
+                        onPress={() => { navigation.navigate('Carrinho') }}
                         style={estilos.botaoCarrinho}>
                         <Text style={estilos.textoBotaoCarrinho}>Adicionar ao Carrinho</Text>
                     </TouchableOpacity>

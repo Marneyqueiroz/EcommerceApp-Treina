@@ -8,7 +8,7 @@ const FinalizarCompraModal = ({visivel, setVisivel}) =>{
             animationType="fade"
             transparent={true}
             visible={visivel}
-            onRequestClose={() => {setVisivel(false)}}
+            onRequestClose={() => {!visivel}}
             >
                 <View style={estilos.modal}>
                     <Text style={estilos.texto}>Compra Finalizada</Text>

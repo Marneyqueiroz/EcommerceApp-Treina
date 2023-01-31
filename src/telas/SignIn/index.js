@@ -1,10 +1,12 @@
 import React from "react";
 import { TouchableOpacity, View, Text, StyleSheet, TextInput } from "react-native";
 import Checkbox from "expo-checkbox";
-import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons"
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function SignUp() {
+    const navigation = useNavigation();
     return (<>
         <View style={estilos.cabecalho}></View>
         <View style={{flexDirection:"row", justifyContent: "space-between", alignItems: "center" }}>
@@ -35,7 +37,10 @@ export default function SignUp() {
                 autoCorrect={false}
             />
 
-            <TouchableOpacity style={estilos.botaoLogIn}>
+            <TouchableOpacity style={estilos.botaoLogIn}
+            onPress={()=>{
+                navigation.navigate("Tab Rotas")
+            }}>
                 <Text style={estilos.textoBotaoLogIn}>Log In</Text>
             </TouchableOpacity>
 

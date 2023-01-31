@@ -1,11 +1,13 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 
 const Header=()=>{
+    const navigation = useNavigation();
     return (
         <View style={estilos.row}>
-            <TouchableOpacity onPress={() => { }}>
+            <TouchableOpacity onPress={() => {navigation.goBack() }}>
                 <AntDesignIcon name="arrowleft" size={20} color="#000"></AntDesignIcon>
                 <Text></Text>
             </TouchableOpacity>
