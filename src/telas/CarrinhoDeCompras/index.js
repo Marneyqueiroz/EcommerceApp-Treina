@@ -1,5 +1,7 @@
-import React from "react";
+import { useScrollToTop } from "@react-navigation/native";
+import React, { useState } from "react";
 import { FlatList, StyleSheet, SafeAreaView } from "react-native";
+import FinalizarCompraModal from "./componentes/FinalizarCompraModal";
 import Header from "./componentes/Header";
 import Item from "./componentes/Item";
 import ResumoCompra from "./componentes/ResumoCompra";
@@ -21,6 +23,7 @@ const itens = [
 ]
 
 const CarrinhoDeCompras = () => {
+    
     return (
 
         <SafeAreaView style={estilos.tela}>
@@ -32,6 +35,7 @@ const CarrinhoDeCompras = () => {
                 ListHeaderComponent={() => { return <Header /> }}
                 ListFooterComponent={() => { return <ResumoCompra /> }}
             />
+            <FinalizarCompraModal/>
         </SafeAreaView>
     )
 }

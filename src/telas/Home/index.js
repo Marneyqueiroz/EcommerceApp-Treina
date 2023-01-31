@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import Anuncios from "./componentes/Anuncios";
 import Header from "./componentes/Header";
@@ -8,6 +8,8 @@ import PromoCard from "./componentes/PromoCard";
 
 
 export default function Home() {
+
+
 
     return (
         <View style={estilos.tela}>
@@ -18,7 +20,7 @@ export default function Home() {
                 <Text style={estilos.linkVerTudo}>Ver Tudo</Text>
             </View>
             <Ofertas />
-            <PromoCard/>
+            <PromoCard />
         </View>
     )
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { ofertas } from "../../../mocks/ofertas";
 import VerticalCards from "./VerticalCard";
+import {useOfertas} from "../../../hooks/useOfertas";
 
 const Ofertas = () => {
+    const [ofertas] = useOfertas([]);
     return (
         <ScrollView
             horizontal

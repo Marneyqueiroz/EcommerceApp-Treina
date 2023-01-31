@@ -7,11 +7,14 @@ import imgCard4 from "../../../assets/cartao_compras_icon_4.png";
 import MiniCard from "../../componentes/MiniCard";
 import SectionHeader from "../../componentes/SectionHeader";
 import ShopCard from "../../componentes/ShopCard";
-import { produtos } from "../../mocks/produtos";
+import { useProdutos } from "../../hooks/useProdutos";
 import Header from "./componentes/Header";
 
 
 const Loja = () => {
+    
+    const [produtos] = useProdutos([]);
+
     return (
         <SafeAreaView style={estilos.tela}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -24,7 +27,7 @@ const Loja = () => {
                     <MiniCard imagem={imgCard4} legenda="Criança"></MiniCard>
                 </View>
 
-                <SectionHeader titulo={"Itens Recomendados"} link={"Ver Tudo"}/>
+                <SectionHeader titulo={"Itens Recomendados"} link={"Ver Tudo"} />
                 <ScrollView
                     contentContainerStyle={estilos.container}
                     showsHorizontalScrollIndicator={false}
@@ -46,7 +49,7 @@ const Loja = () => {
                 </ScrollView>
 
 
-                
+
             </ScrollView>
         </SafeAreaView >
     )
@@ -55,7 +58,7 @@ const Loja = () => {
 const estilos = StyleSheet.create({
     tela: {
         margin: 25,
-        marginTop:0
+        marginTop: 0
     },
     imagem: {
         width: 50,

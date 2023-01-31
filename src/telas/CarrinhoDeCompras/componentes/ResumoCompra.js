@@ -1,6 +1,11 @@
-import { StyleSheet, TextInput, TouchableOpacity, View, Text } from "react-native";
+import { useState } from "react";
+import { StyleSheet, TextInput, TouchableOpacity, View, Text, Modal } from "react-native";
+import FinalizarCompraModal from "./FinalizarCompraModal";
 
 const ResumoCompra = () => {
+    
+    const [visivel, setVisivel] = useState(false);
+
     return (
         <View>
             <View style={estilos.row}>
@@ -32,9 +37,11 @@ const ResumoCompra = () => {
                 <Text style={estilos.valor}>R$2.520,00</Text>
             </View>
 
-            <TouchableOpacity style={estilos.botao} onPress={()=>{}}>
+            <TouchableOpacity style={estilos.botao} onPress={()=>{setVisivel(true)}}>
                 <Text style={estilos.textoBotao}>Finalizar</Text>
             </TouchableOpacity>
+
+            <FinalizarCompraModal visivel={visivel} setVisivel={setVisivel}></FinalizarCompraModal>
         </View>
     )
 }

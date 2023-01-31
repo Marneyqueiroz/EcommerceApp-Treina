@@ -1,9 +1,12 @@
 import React from "react";
-import { anuncios } from "../../../mocks/anuncios";
+
 import { ScrollView } from "react-native";
+import { useAnuncios } from "../../../hooks/useAnuncios";
 import HorizontalCards from "./HorizontalCards";
 
 const Anuncios = () =>{
+
+    const [anuncios] = useAnuncios([]);
     return(
         <ScrollView
                     horizontal

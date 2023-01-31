@@ -1,12 +1,10 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { View } from 'react-native';
-import Produto from './src/telas/Produto';
-
+import StackRotas from './src/rotas/StackRotas';
 export default function App() {
   return (
-
-    <View>
-      <Produto />
-    </View>
+    <NavigationContainer>
+      <StackRotas/>
+    </NavigationContainer>
   );
 }
