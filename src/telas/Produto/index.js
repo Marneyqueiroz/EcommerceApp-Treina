@@ -10,21 +10,38 @@ import Carrossel from "./componentes/Carrossel";
 
 const imagens = [modelo1, modelo2, modelo3, modelo4];
 
+const itens = [
+    {
+        id: 1,
+        nome: "Camisa de Algodão Regular Fit",
+        preco: "100",
+        tamanho: "P"
+    },
+    {
+        id: 2,
+        nome: "Camisa de Algodão Regular Fit",
+        preco: "100",
+        tamanho: "M"
+    },
+    
+]
 
 
 
-const Produto = ({navigation}) => {
+const Produto = ({ navigation }) => {
     const [tamanho, setTamanho] = useState("");
     const [numItens, setNumItens] = useState(1);
     const [imagemAtiva, setImagemAtiva] = useState(0);
 
+    const [carrinhoDeCompras, setCarrinhoDeCompras] = useState([itens]);
+
     return (
         <SafeAreaView >
-            <Carrossel 
-            imagens={imagens}
-            imagemAtiva = {imagemAtiva}
-            setImagemAtiva = {setImagemAtiva}
-             />
+            <Carrossel
+                imagens={imagens}
+                imagemAtiva={imagemAtiva}
+                setImagemAtiva={setImagemAtiva}
+            />
             <View style={estilos.tela}>
                 <View style={estilos.row}>{
                     imagens?.map((imagem, index) => {
@@ -80,15 +97,15 @@ const Produto = ({navigation}) => {
                         </View>
                     </View>
                     <TouchableOpacity
-                        onPress={() => { navigation.navigate('Carrinho') }}
+                        onPress={() => {
+                            setCarrinhoDeCompras
+                            }}
                         style={estilos.botaoCarrinho}>
                         <Text style={estilos.textoBotaoCarrinho}>Adicionar ao Carrinho</Text>
                     </TouchableOpacity>
 
                 </View>
             </View>
-
-
         </SafeAreaView>
     )
 }

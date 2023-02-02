@@ -6,30 +6,17 @@ import Header from "./componentes/Header";
 import Item from "./componentes/Item";
 import ResumoCompra from "./componentes/ResumoCompra";
 
-const itens = [
-    {
-        id: 1,
-        nome: "Camisa de Algodão Regular Fit",
-        preco: "100",
-        tamanho: "P"
-    },
-    {
-        id: 2,
-        nome: "Camisa de Algodão Regular Fit",
-        preco: "100",
-        tamanho: "M"
-    },
-    
-]
 
-const CarrinhoDeCompras = () => {
+const CarrinhoDeCompras = ({route}) => {
+
+    const {carrinho, setCarrinho} = route.params;
     
     return (
 
         <SafeAreaView style={estilos.tela}>
             <FlatList
                 style={estilos.lista}
-                data={itens}
+                data={carrinho}
                 renderItem={({ item }) =><Item nome={item.nome} preco={item.preco} tamanho={item.tamanho} />}
                 keyExtractor={item => item.id}
                 ListHeaderComponent={() => { return <Header /> }}

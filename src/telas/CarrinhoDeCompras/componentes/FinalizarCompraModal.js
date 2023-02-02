@@ -7,13 +7,13 @@ const FinalizarCompraModal = ({visivel, setVisivel}) =>{
             <Modal
             animationType="fade"
             transparent={true}
-            visible={visivel}
+            visible={false}
             onRequestClose={() => {!visivel}}
             >
                 <View style={estilos.modal}>
                     <Text style={estilos.texto}>Compra Finalizada</Text>
 
-                    <TouchableOpacity style={estilos.botao} onPress={() => { setVisivel(false)}}>
+                    <TouchableOpacity style={estilos.botao} onPress={() => { !visivel}}>
                         <Text style={estilos.textoBotao}> Fechar</Text>
                     </TouchableOpacity>
                 </View>
