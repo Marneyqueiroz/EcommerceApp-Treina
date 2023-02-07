@@ -7,18 +7,18 @@ import { useNavigation } from '@react-navigation/native';
 export default function TelaPrincipal() {
     const navigation = useNavigation();
 
-    return (<View>
+    return (<View >
         <Image source={imagem} style={estilos.imagem}></Image>
         <Text style={estilos.titulo}>Todas as suas compras num só app!</Text>
         <Text style={estilos.subtitulo}>Venda seus produtos da maneira mais inteligente e rápida para obter dinheiro imediato e uma consciência mais limpa.</Text>
 
         <View style={estilos.botoes}>
-            <TouchableOpacity style={estilos.botaoLogin} 
-            onPress={() => { navigation.navigate('SignIn') }}>
+            <TouchableOpacity style={estilos.botaoLogin}
+                onPress={() => { navigation.navigate('SignIn') }}>
                 <Text style={estilos.textoBotaoLogin}>Log In</Text>
             </TouchableOpacity>
             <TouchableOpacity style={estilos.botaoSingUp}
-            onPress={() => { navigation.navigate('SignIn') }}>
+                onPress={() => { navigation.navigate('SignIn') }}>
                 <Text style={estilos.textoBotaoSingUp}>Sign Up</Text>
             </TouchableOpacity>
         </View>
@@ -30,10 +30,12 @@ export default function TelaPrincipal() {
 
 const estilos = StyleSheet.create({
 
+
     imagem: {
-        marginTop: 120,
-        width: 360,
-        height: 360
+        marginTop: 100,
+        width: "50%",
+        height: "50%",
+        alignSelf: "center",
     },
     titulo: {
         margin: 25,

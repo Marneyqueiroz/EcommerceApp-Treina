@@ -1,28 +1,30 @@
-import React from "react";
-import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import modelo1 from "../../../../assets/modelo_1.png";
+import React, { useContext } from "react";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import AntDesignIcon from "react-native-vector-icons/AntDesign";
+import modelo1 from "../../../../assets/modelo_1.png";
+import { GlobalContext } from "../../../context/GlobalContext";
 
-const Item = ({nome, preco, tamanho}) => {
+const Item = ({item}) => {
+    console.log(item)
+    const {removerItem} = useContext(GlobalContext);
     return (
         <View style={[estilos.container, estilos.row]}>
             <Image source={modelo1} style={estilos.imagem} />
             <View>
                 <View style={[estilos.row,  { width: 220 }]}>
-                    <Text style={estilos.titulo}>{nome}</Text>
+                    <Text style={estilos.titulo}>{item.produto.nome}</Text>
 
-                    <TouchableOpacity onPress={() => { }}>
+                    <TouchableOpacity onPress={() => removerItem}>
                         <FontAwesomeIcon name="trash-o" size={20} color="#000"></FontAwesomeIcon>
                     </TouchableOpacity>
 
                 </View>
 
-                <Text style={estilos.tamanho}> {tamanho}</Text>
+                <Text style={estilos.tamanho}> {item.produto.tamanho}</Text>
 
 
                 <View style={estilos.row}>
-                    <Text style={estilos.preco}>{preco}</Text>
+                    <Text style={estilos.preco}>{item.produto.preco}</Text>
 
                     <View style={estilos.row}>
                         <TouchableOpacity style={[estilos.botaoNumItens, {marginEnd:10}]} >

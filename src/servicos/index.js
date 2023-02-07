@@ -1,8 +1,8 @@
 import axios  from "axios";
 
 const api = axios.create({
-    //baseURL:"http://localhost:5000"
-    baseURL:"https://7a46adff-85b1-4880-887d-5a952916d127.mock.pstmn.io"
+    baseURL:"http://localhost:5000"
+    //baseURL:"https://7a46adff-85b1-4880-887d-5a952916d127.mock.pstmn.io"
 })
 
 export const obterProdutos = async (setProdutos) =>{

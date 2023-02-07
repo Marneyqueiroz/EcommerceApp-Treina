@@ -7,8 +7,6 @@ export const useProdutos = (estadoInicial) => {
 
     useEffect(() => {
         obterProdutos(setProdutos)
-
-        console.log(produtos)
     }, []);
 
     return [produtos, setProdutos]

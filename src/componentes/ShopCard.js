@@ -6,6 +6,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 const ShopCard = ({ imagem, produto }) => {
     const navigation = useNavigation();
+    console.log(produto)
     return (
         <View style={estilos.container} onPress={() => { }} >
             <Image source={imagem} style={estilos.imagem} />
@@ -22,10 +23,10 @@ const ShopCard = ({ imagem, produto }) => {
             </View>
 
             <View style={estilos.conteudo} onPress={() => { }}>
-                <Text>{produto}</Text>
+                <Text>{produto.nome}</Text>
                 <View style={estilos.informacoes}>
                     <Text style={estilos.preco}>R$ 100,00</Text>
-                    <TouchableOpacity onPress={() => {navigation.navigate('Produto')}}>
+                    <TouchableOpacity onPress={() => {navigation.navigate('Produto', produto)}}>
                         <Ionicons name="arrow-forward-outline" size={20} color="#000000"></Ionicons>
                     </TouchableOpacity>
                 </View>

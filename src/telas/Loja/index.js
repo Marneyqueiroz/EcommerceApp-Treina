@@ -36,10 +36,11 @@ const Loja = () => {
                 >
                     {
                         produtos?.map((produto, index) => {
+
                             return (
                                 <ShopCard
-                                    imagem={produto.imagem}
-                                    produto={produto.produto}
+                                    imagem={imgCard1}
+                                    produto={produto}
                                     key={index}
                                     style={estilos.card}
                                 />

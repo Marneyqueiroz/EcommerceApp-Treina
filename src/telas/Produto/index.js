@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Image, SafeAreaView, StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import React, { useContext, useState } from "react";
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import modelo1 from "../../../assets/modelo_1.png";
 import modelo2 from "../../../assets/modelo_2.png";
 import modelo3 from "../../../assets/modelo_3.png";
 import modelo4 from "../../../assets/modelo_4.png";
+import { GlobalContext } from "../../context/GlobalContext";
 import BotaoTamanho from "./componentes/BotaoTamanho";
 import Carrossel from "./componentes/Carrossel";
 
@@ -28,12 +29,24 @@ const itens = [
 
 
 
-const Produto = ({ navigation }) => {
-    const [tamanho, setTamanho] = useState("");
+const Produto = ({ route }) => {
+    const produto = route.params;
+
+    console.log(produto)
+
+    const {id, adicionarItem} = useContext(GlobalContext);
+
+    const [tamanho, setTamanho] = useState("P");
     const [numItens, setNumItens] = useState(1);
     const [imagemAtiva, setImagemAtiva] = useState(0);
 
-    const [carrinhoDeCompras, setCarrinhoDeCompras] = useState([itens]);
+    const item = 
+        {
+            id: id,
+            produto: produto,
+            tamanho: tamanho,
+            quantidadeItemidade: numItens
+        }
 
     return (
         <SafeAreaView >
@@ -98,7 +111,7 @@ const Produto = ({ navigation }) => {
                     </View>
                     <TouchableOpacity
                         onPress={() => {
-                            setCarrinhoDeCompras
+                            adicionarItem(item)
                             }}
                         style={estilos.botaoCarrinho}>
                         <Text style={estilos.textoBotaoCarrinho}>Adicionar ao Carrinho</Text>
