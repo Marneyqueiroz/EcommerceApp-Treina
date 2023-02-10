@@ -6,7 +6,6 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 const ShopCard = ({ imagem, produto }) => {
     const navigation = useNavigation();
-    console.log(produto)
     return (
         <View style={estilos.container} onPress={() => { }} >
             <Image source={imagem} style={estilos.imagem} />

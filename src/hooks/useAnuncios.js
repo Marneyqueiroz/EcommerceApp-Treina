@@ -8,7 +8,6 @@ export const useAnuncios = (estadoInicial) => {
     useEffect(() => {
         obterAnuncios(setAnuncios)
 
-        console.log(Anuncios)
     }, []);
 
     return [Anuncios, setAnuncios]

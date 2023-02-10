@@ -14,7 +14,7 @@ const Item = ({item}) => {
                 <View style={[estilos.row,  { width: 220 }]}>
                     <Text style={estilos.titulo}>{item.produto.nome}</Text>
 
-                    <TouchableOpacity onPress={() => removerItem}>
+                    <TouchableOpacity onPress={() => removerItem(item)}>
                         <FontAwesomeIcon name="trash-o" size={20} color="#000"></FontAwesomeIcon>
                     </TouchableOpacity>
 

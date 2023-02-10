@@ -14,7 +14,7 @@ const Header=()=>{
 
             <Text style={estilos.titulo}>Minhas Compras</Text>
 
-            <TouchableOpacity onPress={() => { }}>
+            <TouchableOpacity onPress={() => {limpar()}}>
                 <Text style={estilos.link}>Limpar</Text>
             </TouchableOpacity>
         </View>
