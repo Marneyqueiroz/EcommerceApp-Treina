@@ -32,9 +32,8 @@ const itens = [
 const Produto = ({ route }) => {
     const produto = route.params;
 
-    console.log(produto)
 
-    const {id, adicionarItem} = useContext(GlobalContext);
+    const {adicionarItem} = useContext(GlobalContext);
 
     const [tamanho, setTamanho] = useState("P");
     const [numItens, setNumItens] = useState(1);
@@ -42,7 +41,6 @@ const Produto = ({ route }) => {
 
     const item = 
         {
-            id: id,
             produto: produto,
             tamanho: tamanho,
             quantidadeItemidade: numItens
@@ -111,6 +109,7 @@ const Produto = ({ route }) => {
                     </View>
                     <TouchableOpacity
                         onPress={() => {
+                            console.log(item  )
                             adicionarItem(item)
                             }}
                         style={estilos.botaoCarrinho}>
